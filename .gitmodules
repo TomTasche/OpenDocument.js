@@ -1,0 +1,3 @@
+[submodule "zip.js"]
+	path = zip.js
+	url = git@github.com:gildas-lormeau/zip.js.git
