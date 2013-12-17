@@ -45,8 +45,14 @@ function handleEntry(entry, blob) {
 
 	root = xml.loadFromURL(URL.createObjectURL(blob));
 	console.log(root);
-	
-	document.getElementById('output').innerText = root.documentElement.textContent;
+
+    var output = document.getElementById('output');
+    output.innerText = "";
+    
+    var children = root.documentElement.lastChild.childNodes[0].childNodes;
+	for (var i = 0; i < children.length; i++) {
+	    output.innerHTML += "<br />" + children[i].textContent;
+	}
 }
 
 document.getElementById('files').addEventListener('change', handleFileSelect, false);
