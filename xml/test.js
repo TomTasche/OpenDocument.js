@@ -45,6 +45,8 @@ function handleEntry(entry, blob) {
 
 	root = xml.loadFromURL(URL.createObjectURL(blob));
 	console.log(root);
+	
+	document.getElementById('output').innerText = root.documentElement.textContent;
 }
 
 document.getElementById('files').addEventListener('change', handleFileSelect, false);
