@@ -7,6 +7,8 @@ var xml = {
 			xhttp = new ActiveXObject("Microsoft.XMLHTTP");
 		}
 		xhttp.open("GET", name, false);
+		// not supported synchronously on firefox: xhttp.responseType = 'document';
+		xhttp.overrideMimeType('text/xml');
 		xhttp.send();
 		return xhttp.responseXML;
 	},
